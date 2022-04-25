@@ -1,0 +1,31 @@
+{
+  "name": "unplugin-layui-vue-resolver",
+  "version": "0.0.4",
+  "description": "layui-vue 按需加载 unplugin 插件",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig-cjs.json",
+    "public": "npm publish --access public"
+  },
+  "keywords": [
+    "layui-vue"
+  ],
+  "author": "Sight",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.5.4"
+  }
+}
