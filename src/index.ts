@@ -1,75 +1,19 @@
-/**
- * Layui-vue Resolver
- *
- * √ On-demand import components for @layui/layui-vue
- * √ component and style resolver for @layui/icons-vue
- * √ layer API
- */
 const matchComponents = [
-  // done
-  {
-    pattern: /^LayAvatar$/,
-    styleDir: "avatar",
-  },
   {
     pattern: /^LayAvatarList$/,
     styleDir: "avatar",
-  },
-  {
-    pattern: /^LayBackTop$/,
-    styleDir: "backTop",
-  },
-  {
-    pattern: /^LayBadge$/,
-    styleDir: "badge",
-  },
-  {
-    pattern: /^LayBody$/,
-    styleDir: "body",
-  },
-  {
-    pattern: /^LayBreadcrumb$/,
-    styleDir: "breadcrumb",
   },
   {
     pattern: /^LayBreadcrumbItem$/,
     styleDir: "breadcrumb",
   },
   {
-    pattern: /^LayButton$/,
-    styleDir: "button",
-  },
-  {
-    pattern: /^LayButtonContainer$/,
-    styleDir: "buttonContainer",
-  },
-  {
-    pattern: /^LayButtonGroup$/,
-    styleDir: "buttonGroup",
-  },
-  {
-    pattern: /^LayCard$/,
-    styleDir: "card",
-  },
-  {
     pattern: /^(LayCarouselItem)$/,
-    styleDir: "carousel",
-  },
-  {
-    pattern: /^(LayCarousel)$/,
     styleDir: "carousel",
   },
   {
     pattern: /^(LayCheckboxGroup)$/,
     styleDir: "checkbox",
-  },
-  {
-    pattern: /^(LayCheckbox)$/, //被优化到 LaySelectOption
-    styleDir: "checkbox",
-  },
-  {
-    pattern: /^LayRow$/,
-    styleDir: "row",
   },
   {
     pattern: /^LayCol$/,
@@ -80,167 +24,35 @@ const matchComponents = [
     styleDir: "collapse",
   },
   {
-    pattern: /^(LayCollapse)$/,
-    styleDir: "collapse",
-  },
-  {
-    pattern: /^(LayColorPicker)$/,
-    styleDir: "colorPicker",
-  },
-  {
-    pattern: /^LayContainer$/,
-    styleDir: "container",
+    pattern: /^LayConfigProvider$/,
+    styleDir: undefined,
   },
   {
     pattern: /^LayCountUp$/,
-    styleDir: "",
+    styleDir: undefined,
   },
   {
-    pattern: /^LayDatePicker$/,
-    styleDir: "datePicker",
-  },
-  {
-    pattern: /^(LayDropdownMenuItem)$/,
+    pattern: /^(LayDropdownMenu|LayDropdownMenuItem)$/,
     styleDir: "dropdown",
-  },
-  {
-    pattern: /^(LayDropdownMenu)$/,
-    styleDir: "dropdown",
-  },
-  {
-    pattern: /^(LayDropdown)$/,
-    styleDir: "dropdown",
-  },
-  {
-    pattern: /^LayEmpty$/,
-    styleDir: "empty",
-  },
-  {
-    pattern: /^LayException$/,
-    styleDir: "exception",
-  },
-  {
-    pattern: /^LayField$/,
-    styleDir: "field",
-  },
-  {
-    pattern: /^LayFooter$/,
-    styleDir: "footer",
   },
   {
     pattern: /^(LayFormItem)$/,
     styleDir: "form",
   },
   {
-    pattern: /^(LayForm)$/,
-    styleDir: "form",
-  },
-  {
-    pattern: /^(LayFullscreen)$/,
-    styleDir: "fullscreen",
-  },
-  {
-    pattern: /^(LayHeader)$/,
-    styleDir: "header",
-  },
-  {
-    pattern: /^(LayIconPicker)$/,
-    styleDir: "iconPicker",
-  },
-  {
-    pattern: /^(LayInput)$/,
-    styleDir: "input",
-  },
-  {
-    pattern: /^(LayInputNumber)$/,
-    styleDir: "inputNumber",
-  },
-  {
-    pattern: /^LayLayout$/,
-    styleDir: "layout",
-  },
-  {
-    pattern: /^LayLine$/,
-    styleDir: "line",
-  },
-  {
-    pattern: /^LayLogo$/,
-    styleDir: "logo",
-  },
-  {
-    pattern: /^(LayMenu|LayMenuItem|LaySubMenu)$/,
+    pattern: /^(LayMenuItem|LaySubMenu)$/,
     styleDir: "menu",
-  },
-  {
-    pattern: /^LayNoticeBar$/,
-    styleDir: "noticeBar",
-  },
-  {
-    pattern: /^LayPage$/,
-    styleDir: "page",
-  },
-  {
-    pattern: /^LayPanel$/,
-    styleDir: "panel",
-  },
-  {
-    pattern: /^LayProgress$/,
-    styleDir: "progress",
-  },
-  {
-    pattern: /^LayQuote$/,
-    styleDir: "quote",
-  },
-  {
-    pattern: /^LayRadio$/,
-    styleDir: "radio",
-  },
-  {
-    pattern: /^LayRate$/,
-    styleDir: "rate",
-  },
-  {
-    pattern: /^LayResult$/,
-    styleDir: "result",
-  },
-  {
-    pattern: /^LayRipple$/,
-    styleDir: "ripple",
-  },
-  {
-    pattern: /^LayScroll$/,
-    styleDir: "scroll",
   },
   {
     pattern: /^LaySelectOption$/,
     styleDir: "select",
   },
   {
-    pattern: /^LaySelect$/,
-    styleDir: "select",
-  },
-  {
-    pattern: /^LaySide$/,
-    styleDir: "side",
-  },
-  {
     pattern: /^LaySkeletonItem$/,
     styleDir: "skeleton",
   },
   {
-    pattern: /^LaySkeleton$/,
-    styleDir: "skeleton",
-  },
-  {
-    pattern: /^LaySlider$/,
-    styleDir: "slider",
-  },
-  {
     pattern: /^LaySplitPanelItem$/,
-    styleDir: "splitPanel",
-  },
-  {
-    pattern: /^LaySplitPanel$/,
     styleDir: "splitPanel",
   },
   {
@@ -248,58 +60,13 @@ const matchComponents = [
     styleDir: "step",
   },
   {
-    pattern: /^LayStep$/,
-    styleDir: "step",
-  },
-  {
-    pattern: /^LaySwitch$/,
-    styleDir: "switch",
-  },
-  {
-    pattern: /^(LayTab|LayTabItem)$/,
+    pattern: /^(LayTabItem)$/,
     styleDir: "tab",
-  },
-  {
-    pattern: /^(LayTable)$/,
-    styleDir: "table",
-  },
-  {
-    pattern: /^(LayTextarea)$/,
-    styleDir: "textarea",
   },
   {
     pattern: /^LayTimelineItem$/,
     styleDir: "timeline",
   },
-  {
-    pattern: /^LayTimeline$/,
-    styleDir: "timeline",
-  },
-  {
-    pattern: /^LayTolltip$/,
-    styleDir: "popper",
-  },
-  {
-    pattern: /^LayTransfer$/,
-    styleDir: "transfer",
-  },
-  {
-    pattern: /^LayTransition$/,
-    styleDir: "transition",
-  },
-  {
-    pattern: /^LayTree$/,
-    styleDir: "tree",
-  },
-  {
-    pattern: /^LayUpload$/,
-    styleDir: "upload",
-  },
-  {
-    pattern: /^LayConfigProvider$/,
-    styleDir: "",
-  },
-
 ];
 
 export interface LayuiVueResolverOptions {
@@ -320,66 +87,74 @@ export interface LayuiVueResolverOptions {
 
   /**
    * exclude components that do not require automatic import
-   * @default []
    *
    */
-  exclude?: string[];
+  exclude?: Array<string | RegExp>;
 }
 
-const libRE = /^Lay[A-Z]/;
-const layerRE = /^(layer|LayLayer)$/;
-const iconsRE = /^([A-Z][\w]+Icon|LayIcon)$/;
-const esComponentsFolder = "@layui/layui-vue/es";
+const libRE = /^Lay[A-Z]/
+const layerRE = /^(layer|LayLayer)$/
+const iconsRE = /^([A-Z][\w]+Icon|LayIcon)$/
+const esComponentsFolder = "@layui/layui-vue/es"
 
 function lowerCamelCase(str: string) {
   return str.charAt(0).toLowerCase() + str.slice(1);
 }
 
 function getSideEffects(importName: string, options: LayuiVueResolverOptions) {
-  const { importStyle = true } = options;
-  if (!importStyle) return;
-  let styleDir: string | undefined = undefined;
-  if (importName.match(iconsRE)) {
-    return `@layui/icons-vue/lib/index.css`;
-  } else if (importName.match(layerRE)) {
-    return `@layui/layer-vue/lib/index.css`;
-  } else if (importName.match(libRE)) {
-    styleDir = lowerCamelCase(importName.slice(3)); // LayBackTop -> backTop
-    for (const item of matchComponents) {
-      if (item.pattern.test(importName)) {
-        styleDir = item.styleDir;
-        break;
-      }
+  const { importStyle = "css" } = options;
+  if (!importStyle) {
+    return undefined
+  }
+  let styleDir: string | undefined = lowerCamelCase(importName.slice(3)); // LayBackTop -> backTop
+  for (const item of matchComponents) {
+    if (item.pattern.test(importName)) {
+      styleDir = item.styleDir
+      break
     }
-    return styleDir 
-    ? [
-      `${esComponentsFolder}/${styleDir}/index.css`,
-       `${esComponentsFolder}/index/index.css`
-      ] 
-    : undefined;
+  }
+  if (importStyle === 'css' || importStyle) {
+    return styleDir
+      ? [`${esComponentsFolder}/${styleDir}/index.css`, `${esComponentsFolder}/index/index.css`]
+      : undefined
   }
 }
 
-function resolveComponent(name: string, options: LayuiVueResolverOptions) {
-  let importName: string | undefined = undefined;
-  let path: string = `@layui/layui-vue`;
-  let sideEffects: string | string[] | undefined;
+function isExclude(name: string, exclude: Array<string | RegExp> | undefined): boolean {
+  if (exclude) {
+    for (const item of exclude) {
+      if (name === item || name.match(item)) {
+        return true
+      }
+    }
+  }
+  return false
+}
 
-  if (options.resolveIcons && name.match(iconsRE)) {
-    importName = name;
-    path = `@layui/icons-vue`;
-    sideEffects = getSideEffects(name, options);
-  } else if (name.match(layerRE)) {
-    importName = name;
-    path = `@layui/layer-vue`;
-    sideEffects = getSideEffects(name, options);
-  } else if (name.match(libRE) && !options?.exclude?.includes(name)) {
-    importName = name;
-    path = `@layui/layui-vue`;
-    sideEffects = getSideEffects(name, options);
+function resolveComponent(importName: string, options: LayuiVueResolverOptions) {
+  if (isExclude(importName, options.exclude)) {
+    return undefined
   }
 
-  return importName ? { importName, path, sideEffects } : null;
+  if (options.resolveIcons && importName.match(iconsRE)) {
+    return {
+      name: importName,
+      from: '@layui/icons-vue',
+      sideEffects: '@layui/icons-vue/lib/index.css',
+    }
+  } else if (importName.match(layerRE)) {
+    return {
+      name: importName,
+      from: '@layui/layer-vue',
+      sideEffects: '@layui/layer-vue/lib/index.css',
+    }
+  } else if (importName.match(libRE)) {
+    return {
+      name: importName,
+      from: '@layui/layui-vue',
+      sideEffects: getSideEffects(importName, options),
+    }
+  }
 }
 
 /**
