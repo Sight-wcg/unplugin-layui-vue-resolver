@@ -92,10 +92,10 @@ export interface LayuiVueResolverOptions {
   exclude?: Array<string | RegExp>;
 }
 
-const libRE = /^Lay[A-Z]/
-const layerRE = /^(layer|LayLayer)$/
-const iconsRE = /^([A-Z][\w]+Icon|LayIcon)$/
-const esComponentsFolder = "@layui/layui-vue/es"
+const layuiRE: RegExp = /^Lay[A-Z]/
+const layerRE: RegExp = /^(layer|LayLayer)$/
+const iconsRE: RegExp = /^([A-Z][\w]+Icon|LayIcon)$/
+let libName: string = '@layui/layui-vue'
 
 function lowerCamelCase(str: string) {
   return str.charAt(0).toLowerCase() + str.slice(1);
@@ -106,6 +106,9 @@ function getSideEffects(importName: string, options: LayuiVueResolverOptions) {
   if (!importStyle) {
     return undefined
   }
+  if (libName != '@layui/layui-vue') {
+    return `${libName}/lib/index.css`
+  }
   let styleDir: string | undefined = lowerCamelCase(importName.slice(3)); // LayBackTop -> backTop
   for (const item of matchComponents) {
     if (item.pattern.test(importName)) {
@@ -115,46 +118,39 @@ function getSideEffects(importName: string, options: LayuiVueResolverOptions) {
   }
   if (importStyle === 'css' || importStyle) {
     return styleDir
-      ? [`${esComponentsFolder}/${styleDir}/index.css`, `${esComponentsFolder}/index/index.css`]
+      ? [`@layui/layui-vue/es/${styleDir}/index.css`, `@layui/layui-vue/es/index/index.css`]
       : undefined
   }
 }
 
-function isExclude(name: string, exclude: Array<string | RegExp> | undefined): boolean {
-  if (exclude) {
-    for (const item of exclude) {
-      if (name === item || name.match(item)) {
-        return true
-      }
+function isExclude(name: string, exclude: Array<string | RegExp>): boolean {
+  for (const item of exclude) {
+    if (name === item || name.match(item)) {
+      return true
     }
   }
   return false
 }
 
 function resolveComponent(importName: string, options: LayuiVueResolverOptions) {
-  if (isExclude(importName, options.exclude)) {
+  let name: string | undefined = undefined
+
+  if (options.exclude && isExclude(importName, options.exclude)) {
     return undefined
   }
-
   if (options.resolveIcons && importName.match(iconsRE)) {
-    return {
-      name: importName,
-      from: '@layui/icons-vue',
-      sideEffects: '@layui/icons-vue/lib/index.css',
-    }
+    name = importName
+    libName = '@layui/icons-vue'
   } else if (importName.match(layerRE)) {
-    return {
-      name: importName,
-      from: '@layui/layer-vue',
-      sideEffects: '@layui/layer-vue/lib/index.css',
-    }
-  } else if (importName.match(libRE)) {
-    return {
-      name: importName,
-      from: '@layui/layui-vue',
-      sideEffects: getSideEffects(importName, options),
-    }
+    name = importName
+    libName = '@layui/layer-vue'
+  } else if (importName.match(layuiRE)) {
+    name = importName
+    libName = '@layui/layui-vue'
   }
+  return name
+    ? { name, from: libName, sideEffects: getSideEffects(name, options) }
+    : undefined
 }
 
 /**
