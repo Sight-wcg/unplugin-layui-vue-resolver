@@ -8,7 +8,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "outDir": "./dist",
-    "declaration": true
+    "declaration": false,
+    "declarationDir": "./dist/types"
   },
   "include": ["./src"],
 }
