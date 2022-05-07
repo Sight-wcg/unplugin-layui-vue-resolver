@@ -16,8 +16,11 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
+    "dev": "tsup --watch src",
+    "example:dev": "npm -C examples/vite-layui-vue run dev",
     "build": "tsup",
-    "public": "npm publish --access public"
+    "public": "npm publish --access public",
+    "prepare": "npm run build"
   },
   "keywords": [
     "layui-vue"
@@ -26,7 +29,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.31",
-    "typescript": "^4.5.4",
+    "typescript": "^4.6.3",
     "tsup": "^5.12.7"
   },
   "dependencies": {
