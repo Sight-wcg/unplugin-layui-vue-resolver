@@ -47,6 +47,7 @@ export default {
 export interface LayuiVueResolverOptions {
   /**
    * import style along with components
+   * 将样式与组件一起导入
    *
    * @default 'css'
    */
@@ -55,6 +56,7 @@ export interface LayuiVueResolverOptions {
   /**
    * resolve `@layui/layui-vue' icons
    * requires package `@layui/icons-vue`
+   * 是否解析图标
    *
    * @default false
    */
@@ -62,6 +64,9 @@ export interface LayuiVueResolverOptions {
 
   /**
    * exclude components that do not require automatic import
+   * 排除不需要自动导入的组件
+   * 
+   * eg: exclude: ['LayAnchor', /^LayDoc[A-Z]/,]
    * 
    */
   exclude?: Array<string | RegExp>;
