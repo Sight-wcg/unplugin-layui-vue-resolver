@@ -3,10 +3,10 @@
 ### 快速开始
 ```
 // 安装依赖
-npm install
+pnpm install
 
 // 运行
-npm run dev
+pnpm dev
 ```
 
 ### 按需导入插件说明
@@ -62,7 +62,6 @@ export interface LayuiVueResolverOptions {
 
   /**
    * exclude components that do not require automatic import
-   * @default []
    * 
    */
   exclude?: Array<string | RegExp>;
