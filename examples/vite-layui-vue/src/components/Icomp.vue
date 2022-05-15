@@ -21,7 +21,7 @@
       <lay-col md="8" sm="12" xs="24">
         <div class="grid-demo">
           <p>lay-iput,i18问题</p>
-          <lay-input v-model="data1"></lay-input>
+          <!-- <lay-input v-model="data1"></lay-input> -->
 
         </div>
       </lay-col>
