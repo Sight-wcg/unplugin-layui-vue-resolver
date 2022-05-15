@@ -21,7 +21,7 @@
       <lay-col md="8" sm="12" xs="24">
         <div class="grid-demo">
           <p>lay-iput,i18问题</p>
-          <!-- <lay-input v-model="data1"></lay-input> -->
+          <lay-input v-model="data1"></lay-input>
 
         </div>
       </lay-col>
@@ -29,7 +29,7 @@
       <lay-col md="8" sm="12" xs="24">
         <div class="grid-demo">
           <p>lay-input-number,i18问题</p>
-          <!-- <lay-input-number v-model="data1"></lay-input-number> -->
+          <lay-input-number v-model="data1"></lay-input-number>
         </div>
       </lay-col>
 

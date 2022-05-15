@@ -22,7 +22,7 @@
         <div class="grid-demo">
           <p>lay-date-picker, input i18问题</p>
           选择的时间：{{ endTime }}
-          <!-- <lay-date-picker v-model="endTime"></lay-date-picker> -->
+          <lay-date-picker v-model="endTime"></lay-date-picker>
         </div>
       </lay-col>
 

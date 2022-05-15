@@ -29,8 +29,8 @@
       <lay-col md="8" sm="12" xs="24">
         <div class="grid-demo">
           <p>lay-page,i18错误</p>
-          <!-- <lay-page v-model="currentPage" :limit="limit" @limit="limit = $event" :total="total" :show-page="showPage">
-          </lay-page> -->
+          <lay-page v-model="currentPage" :limit="limit" @limit="limit = $event" :total="total" :show-page="showPage">
+          </lay-page>
         </div>
       </lay-col>
 
