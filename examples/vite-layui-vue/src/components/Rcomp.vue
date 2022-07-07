@@ -45,8 +45,12 @@
 
       <lay-col md="8" sm="12" xs="24">
         <div class="grid-demo">
-          <p>组件名</p>
-
+          <p>lay-radio-group</p>
+          <lay-radio-group name="action" v-model="selected1">
+            <lay-radio label="1">写作</lay-radio>
+            <lay-radio label="2">画画</lay-radio>
+            <lay-radio label="3">运动</lay-radio>
+          </lay-radio-group>
         </div>
       </lay-col>
 

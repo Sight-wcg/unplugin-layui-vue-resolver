@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@layui/layui-vue": "1.2.4",
+    "@layui/layui-vue": "1.2.7",
     "vue": "3.2.33"
   },
   "devDependencies": {
@@ -17,7 +17,7 @@
     "unplugin-auto-import": "^0.7.1",
     "unplugin-vue-components": "^0.19.3",
     "unplugin-layui-vue-resolver": "workspace:*",
-    "vite": "^2.9.5",
-    "vue-tsc": "^0.29.8"
+    "vite": "^2.9.13",
+    "vue-tsc": "^0.38.3"
   }
 }

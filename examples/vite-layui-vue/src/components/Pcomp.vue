@@ -36,8 +36,8 @@
 
       <lay-col md="8" sm="12" xs="24">
         <div class="grid-demo">
-          <p>组件名</p>
-
+          <p>lay-page-header</p>
+          <lay-page-header content="详情页面"></lay-page-header>
         </div>
       </lay-col>
 
