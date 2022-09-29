@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Component } from 'vue';
 import Acomp from './components/Acomp.vue';
 import Bcomp from "./components/Bcomp.vue";
 import Ccomp from "./components/Ccomp.vue";
@@ -20,7 +21,7 @@ import Ucomp from "./components/Ucomp.vue";
 
 //import './public.css'
 
-const comps = {
+const comps: Record<string, Component> = {
   Acomp,
   Bcomp,
   Ccomp,
@@ -45,11 +46,13 @@ const currentComp = ref("Acomp")
 </script>
 
 <template>
+  <div>
     <lay-tab v-model="currentComp" type="brief">
       <lay-tab-item v-for="(_, comp) in comps" :title="comp" :id="comp">
         <component :is="comps[currentComp]" />
       </lay-tab-item>
     </lay-tab>
+  </div>
 </template>
 
 <style>
@@ -59,7 +62,6 @@ const currentComp = ref("Acomp")
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
-  margin-top: 30px;
 }
 
 .grid-demo {
