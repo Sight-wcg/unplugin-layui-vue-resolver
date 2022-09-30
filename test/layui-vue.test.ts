@@ -51,8 +51,8 @@ describe('LayuiVueResolver', () => {
   });
 
   test('Test exclude option', async () => {
-    const resolver = LayuiVueResolver({ exclude: ['LayDocString', /^LayDoc[A-Z]/] }) as ComponentResolverObject;
-    expect(resolver.resolve('LayDocString')).toBeFalsy();
+    const resolver = LayuiVueResolver({ exclude: ['LayString', /^LayDoc[A-Z]/] }) as ComponentResolverObject;
+    expect(resolver.resolve('LayString')).toBeFalsy();
     expect(resolver.resolve('LayDocRegExp')).toBeFalsy();
   });
 });
