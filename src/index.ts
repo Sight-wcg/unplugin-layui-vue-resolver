@@ -1,6 +1,6 @@
 import type { ComponentInfo, ComponentResolver, SideEffectsInfo } from './types'
 
-const matchComponents = [
+export const matchComponents = [
   {
     pattern: /^LayAvatarList$/,
     styleDir: 'avatar',
