@@ -4,7 +4,7 @@ importers:
 
   .:
     specifiers:
-      '@layui/layui-vue': 1.5.0
+      '@layui/layui-vue': 1.6.3
       '@types/node': ^17.0.31
       tsup: ^5.12.7
       typescript: ^4.6.3
@@ -12,7 +12,7 @@ importers:
       vitest: ^0.23.4
       vue: 3.2.40
     devDependencies:
-      '@layui/layui-vue': 1.5.0_vue@3.2.40
+      '@layui/layui-vue': 1.6.3_vue@3.2.40
       '@types/node': 17.0.31
       tsup: 5.12.7_typescript@4.6.4
       typescript: 4.6.4
@@ -148,6 +148,11 @@ packages:
 
   /@layui/layer-vue/1.4.2:
     resolution: {integrity: sha512-db46XsSY/XLEE3JvI9QL7nEoHL0+FHoQRT9pyQ1+a01D0rgegycyQ1OAIBpaJ0/vqoNGlQFRjX0YYPGds9nB+A==}
+    dev: false
+
+  /@layui/layer-vue/1.4.4:
+    resolution: {integrity: sha512-OVRfwRtr9jI8KICWmzGbHcl2QAy2xke9PYi3A3UJBRH/H8kqc1FsEjVz8V+Dup29DXdWPa+7NkeFY3hUhSbpEA==}
+    dev: true
 
   /@layui/layui-vue/1.5.0_vue@3.2.40:
     resolution: {integrity: sha512-2zTQYeqzSBFkFpndmFkw5Xjd628MtuWaspkehw1eyzUgysBbDKRZiTAFNF2kpdpxsD9VSUO/gy74TnjsKPfdIg==}
@@ -165,6 +170,25 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+    dev: false
+
+  /@layui/layui-vue/1.6.3_vue@3.2.40:
+    resolution: {integrity: sha512-1qvWoPu2C6aauFLykdQvbxwrVW7vQpUPIrkou6EiqdfDGhbHlXIivhdZyHZijlgCPJKgvUnD7sYN5CVboaBBsQ==}
+    dependencies:
+      '@ctrl/tinycolor': 3.4.1
+      '@layui/icons-vue': 1.0.9
+      '@layui/layer-vue': 1.4.4
+      '@umijs/ssr-darkreader': 4.9.45
+      '@vueuse/core': 9.3.0_vue@3.2.40
+      async-validator: 4.1.1
+      cropperjs: 1.5.12
+      dayjs: 1.11.2
+      evtd: 0.2.3
+      vue-i18n: 9.1.10_vue@3.2.40
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: true
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
